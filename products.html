@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Cake Origin Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            Cake Origin <span style="color: var(--admin-primary); margin-left: 5px;">Admin</span>
+        </div>
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-chart-pie"></i> Dashboard
+            </a>
+            <a href="products.html" class="menu-item active">
+                <i class="fa-solid fa-box-open"></i> Products
+            </a>
+            <a href="add-product.html" class="menu-item">
+                <i class="fa-solid fa-plus-circle"></i> Add Product
+            </a>
+            <a href="../index.html" class="menu-item" target="_blank">
+                <i class="fa-solid fa-globe"></i> View Website
+            </a>
+        </div>
+        <div class="sidebar-footer">
+            <a href="#" id="logout-btn" class="menu-item">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="top-bar">
+            <div style="display: flex; align-items: center;">
+                <i class="fa-solid fa-bars menu-toggle" id="menu-toggle"></i>
+                <h2>Product Management</h2>
+            </div>
+            <a href="add-product.html" class="btn-primary" style="text-decoration:none;">+ Add Product</a>
+        </div>
+
+        <div class="page-content">
+
+            <div class="card-table">
+                <div class="table-header">
+                    <h3>All Cakes</h3>
+                    <input type="text" placeholder="Search..." class="form-control" style="width: 200px;">
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name / Category</th>
+                            <th>Price</th>
+                            <th>Stock Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-table-body">
+                        <!-- Loaded via JS -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product | Cake Origin Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            Cake Origin <span style="color: var(--admin-primary); margin-left: 5px;">Admin</span>
+        </div>
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-chart-pie"></i> Dashboard
+            </a>
+            <a href="products.html" class="menu-item">
+                <i class="fa-solid fa-box-open"></i> Products
+            </a>
+            <a href="add-product.html" class="menu-item active">
+                <i class="fa-solid fa-plus-circle"></i> Add Product
+            </a>
+            <a href="../index.html" class="menu-item" target="_blank">
+                <i class="fa-solid fa-globe"></i> View Website
+            </a>
+        </div>
+        <div class="sidebar-footer">
+            <a href="#" id="logout-btn" class="menu-item">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="top-bar">
+            <div style="display: flex; align-items: center;">
+                <i class="fa-solid fa-bars menu-toggle" id="menu-toggle"></i>
+                <h2>Add New Cake</h2>
+            </div>
+        </div>
+
+        <div class="page-content">
+
+            <div class="card-table" style="max-width: 800px; margin: 0 auto;">
+                <form id="add-product-form">
+                    <div class="form-group">
+                        <label class="form-label">Cake Name</label>
+                        <input type="text" id="p-name" class="form-control" placeholder="e.g. Chocolate Truffle"
+                            required>
+                    </div>
+
+                    <div class="form-group-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label class="form-label">Price (₹)</label>
+                            <input type="number" id="p-price" class="form-control" placeholder="e.g. 500" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Category</label>
+                            <select id="p-category" class="form-control">
+                                <option value="birthday">Birthday Cake</option>
+                                <option value="anniversary">Anniversary Cake</option>
+                                <option value="kids">Kids Cake</option>
+                                <option value="designer">Designer Cake</option>
+                                <option value="specials">Special / Offer</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Type</label>
+                        <select id="p-egg" class="form-control">
+                            <option value="egg">Contains Egg</option>
+                            <option value="eggless">Eggless</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Stock Status</label>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <input type="checkbox" id="p-stock" checked style="width: 20px; height: 20px;">
+                            <span>Available in Stock</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Product Image</label>
+                        <input type="file" id="p-image" class="form-control" accept="image/*">
+                        <div class="img-preview" style="display: none;"> <!-- Hidden default -->
+                            <img id="preview-img" src="" alt="Preview">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 20px;">Save
+                        Product</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
